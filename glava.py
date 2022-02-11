@@ -22,6 +22,7 @@ from os import path
 chars = digits + ascii_lowercase + "#"
 
 if not path.exists(f"/home/{getlogin()}/.config/glava/bars.glsl"):
+    system("sudo apt-get install libgl1-mesa-dev libpulse0 libpulse-dev libxext6 libxext-dev libxrender-dev libxcomposite-dev liblua5.3-dev liblua5.3 lua-lgi lua-filesystem libobs0 libobs-dev meson build-essential gcc ")
     print("Glava config file not found, glava not installed")
     input("Press any key to install...")
     system("git clone https://github.com/jarcode-foss/glava")
