@@ -1,9 +1,10 @@
 from __future__ import print_function
 from subprocess import Popen
+from os import system
 try:
     import psutil
 except:
-    Popen("pip install psutil", shell=True)
+    system("pip install psutil")
 from string import digits, ascii_lowercase
 from subprocess import check_output
 import binascii
@@ -12,7 +13,7 @@ import numpy as np
 try:
     import scipy
 except:
-    Popen("pip install scipy", shell=True)
+    system("pip install scipy")
 import scipy.misc
 import scipy.cluster
 from os import getlogin
@@ -23,11 +24,11 @@ chars = digits + ascii_lowercase + "#"
 if not path.exists(f"/home/{getlogin()}/.config/glava/bars.glsl"):
     print("Glava config file not found, glava not installed")
     input("Press any key to install...")
-    Popen("git clone https://github.com/jarcode-foss/glava", shell=True)
-    Popen("cd glava", shell=True)
-    Popen("meson build --prefix /usr", shell=True)
-    Popen("ninja -C build", shell=True)
-    Popen("sudo ninja -C build install", shell=True)
+    system("git clone https://github.com/jarcode-foss/glava")
+    system("cd glava")
+    system("meson build --prefix /usr")
+    system("ninja -C build")
+    system("sudo ninja -C build install",)
 
 def process():
     PROCNAME = "glava"
